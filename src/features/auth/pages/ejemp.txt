@@ -1,0 +1,44 @@
+import { Routes, Route } from "react-router-dom";
+
+/* Layout */
+import Header from "./layout/components/header";
+
+/* Landing */
+import LandingPage from "./layout/components/landingPage";
+
+/* Auth */
+import MyAccount from "./features/auth/components/myAccount";
+import MyBuys from "./features/auth/components/myBuys";
+import MyFavorites from "./features/auth/components/myFavorites";
+
+/* Vistas */
+import Article from "./view/components/article";
+import Offers from "./view/components/offers";
+
+function App() {
+  return (
+    <>
+      {/* Navbar o Header principal */}
+      <Header />
+
+      {/* Sistema de rutas */}
+      <Routes>
+
+        {/* Landing principal */}
+        <Route path="/" element={<LandingPage />} />
+
+        {/* Sección de usuario */}
+        <Route path="/mi-cuenta" element={<MyAccount />} />
+        <Route path="/mis-compras" element={<MyBuys />} />
+        <Route path="/favoritos" element={<MyFavorites />} />
+
+        {/* Productos */}
+        <Route path="/producto" element={<Article />} />
+
+        {/* Ofertas */}
+        <Route path="/ofertas" element={<Offers />} />
+
+      </Routes>
+    </>
+  );
+}
