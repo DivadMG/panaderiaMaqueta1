@@ -1,25 +1,37 @@
 import { Routes, Route } from "react-router-dom";
-import { Box } from "@mui/material";
-import { Header } from "./features/auth/layout/components/Header";
-import LandingPage from "./features/auth/layout/components/LandingPage";
-import MyAccount from "./features/auth/components/MyAccount";
-import MyBuys from "./features/auth/components/MyBuys";
-import MyFavorites from "./features/auth/components/MyFavorites";
-import Offers from "./features/auth/view/components/Offers";
-import Article from "./features/auth/view/components/Article";
+import { Box }           from "@mui/material";
+import { Header }        from "./features/auth/layout/components/Header";
+import LandingPage       from "./features/auth/layout/components/LandingPage";
+import MyAccount from './features/auth/components/myAccount'
+import MyBuys            from "./features/auth/components/MyBuys";
+import MyFavorites       from "./features/auth/components/MyFavorites";
+import Offers            from "./features/auth/view/components/Offers";
+import Article  from "./features/auth/view/components/Article";
+import Hooks from "./features/auth/hooks/Hooks";
+
 
 function App() {
   return (
     <>
+      {/* Header fuera de Routes: visible en TODAS las páginas */}
       <Header />
-      <Box sx={{ mt: "64px" }}>  {/* ← empuja el contenido debajo del AppBar */}
+
+      <Box sx={{ mt: "64px" }}>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/article" element={<Article />} />
-          <Route path="/offers" element={<Offers />} />
-          <Route path="/myaccount" element={<MyAccount />} />
-          <Route path="/mybuys" element={<MyBuys />} />
+
+          {/* Página principal */}
+          <Route path="/"           element={<LandingPage />} />
+
+          {/* Páginas existentes */}
+          <Route path="/article"    element={<Article />} />
+          <Route path="/offers"     element={<Offers />} />
+
+          {/* Páginas de usuario */}
+          <Route path="/hooks"      element={<Hooks />} />
+          <Route path="/myaccount"   element={<MyAccount />} />
+          <Route path="/mybuys"      element={<MyBuys />} />
           <Route path="/myfavorites" element={<MyFavorites />} />
+
         </Routes>
       </Box>
     </>
