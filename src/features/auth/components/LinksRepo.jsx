@@ -73,7 +73,7 @@ const LinksRepo = () => {
               variant="contained"
               size="large"
               startIcon={<RocketLaunchIcon />}
-              href="https://vercel.com/davids-projects-9f0fa5fc/panaderia-maqueta1/3uqKEMxfQ9EAKE34bvHG1qfRK23w"
+              href="panaderia-maqueta1-git-main-davids-projects-9f0fa5fc.vercel.app"
               sx={{
                 backgroundColor: "#000",
                 "&:hover": { backgroundColor: "#333" },
