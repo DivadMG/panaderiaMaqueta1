@@ -8,29 +8,28 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import LogoutIcon        from "@mui/icons-material/Logout";
 import { useNavigate }   from "react-router-dom";
 
-// ── Credenciales del login simulado ──────────────────────────
-// 💡 CAMBIA AQUÍ el usuario y contraseña que deben funcionar
+// ── Credenciales del login simulado ──────
 const USUARIO_VALIDO  = "admin";
 const PASSWORD_VALIDO = "1234";
 
-// ─────────────────────────────────────────────────────────────
+// 
 const MyAccount = () => {
   const navigate = useNavigate();
 
-  // ── Estado del formulario ──────────────────────────────────
+  // ── Estado del formulario ─────
   const [usuario,     setUsuario]     = useState("");      // valor del campo usuario
   const [password,    setPassword]    = useState("");      // valor del campo contraseña
   const [verPassword, setVerPassword] = useState(false);  // true = contraseña visible
   const [error,       setError]       = useState("");      // mensaje de error
   const [logueado,    setLogueado]    = useState(false);   // true = mostrar perfil
 
-  // ── Login: verifica credenciales ──────────────────────────
+  // ── Login: verifica credenciales ──────
   const handleLogin = () => {
     if (usuario === USUARIO_VALIDO && password === PASSWORD_VALIDO) {
-      setLogueado(true);  // ✅ Correcto → muestra el perfil
+      setLogueado(true);  
       setError("");
     } else {
-      setError("Usuario o contraseña incorrectos.");  // ❌ Muestra error
+      setError("Usuario o contraseña incorrectos.");  
     }
   };
 
@@ -39,7 +38,7 @@ const MyAccount = () => {
     if (e.key === "Enter") handleLogin();
   };
 
-  // ── Logout ─────────────────────────────────────────────────
+  // ── Logout 
   const handleLogout = () => {
     setLogueado(false);
     setUsuario("");
@@ -47,9 +46,9 @@ const MyAccount = () => {
     setError("");
   };
 
-  // ══════════════════════════════════════════════════════════
+
   // VISTA 1: Formulario de login
-  // ══════════════════════════════════════════════════════════
+
   if (!logueado) {
     return (
       <Box
@@ -71,7 +70,6 @@ const MyAccount = () => {
             sx={{ borderRadius: 4, overflow: "hidden" }}
           >
 
-            {/* ── Cabecera con emoji y título ─────────────── */}
             <Box
               sx={{
                 backgroundColor: "#3e2723",
@@ -82,7 +80,7 @@ const MyAccount = () => {
                 gap: 1,
               }}
             >
-              {/* 💡 Cambia este emoji por otro si prefieres */}
+              
               <Typography sx={{ fontSize: "3.5rem", lineHeight: 1 }}>
                 🧑‍🍳
               </Typography>
@@ -97,7 +95,7 @@ const MyAccount = () => {
               </Typography>
             </Box>
 
-            {/* ── Formulario ──────────────────────────────── */}
+            {/* ── Formulario  */}
             <Box sx={{ px: 4, py: 4, display: "flex", flexDirection: "column", gap: 2.5 }}>
 
               {/* Alerta de error — solo aparece si hay error */}
@@ -204,9 +202,9 @@ const MyAccount = () => {
     );
   }
 
-  // ══════════════════════════════════════════════════════════
+
   // VISTA 2: Perfil (después del login exitoso)
-  // ══════════════════════════════════════════════════════════
+
   return (
     <Box sx={{ minHeight: "100vh", backgroundColor: "#fdf6ec", py: 8 }}>
       <Container maxWidth="sm">

@@ -10,7 +10,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import HomeIcon        from "@mui/icons-material/Home";
 import CategoryIcon    from "@mui/icons-material/Category";
 import LocalOfferIcon  from "@mui/icons-material/LocalOffer";
-import InfoIcon        from "@mui/icons-material/Info";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import CodeIcon        from "@mui/icons-material/Code";
 
 // Íconos de la derecha
@@ -24,12 +24,10 @@ import { useShop } from "../../../../context/ShopContext";
 const navLinks = [
   { path: "/",          label: "Inicio",    icon: <HomeIcon fontSize="small" /> },
   { path: "/offers",    label: "Productos",   icon: <LocalOfferIcon fontSize="small" /> },
-  { path: "/article",   label: "Nosotros",  icon: <InfoIcon fontSize="small" /> },
+  { path: "/linksrepo", label: "Repositorios", icon: <GitHubIcon fontSize="small" /> },
   { path: "/hooks",     label: "Hooks",     icon: <CodeIcon fontSize="small" /> },
 ];
 
-// ── Estilos de NavLink activo / inactivo ─────────────────────
-// 💡 Para cambiar el color del link activo: edita color: "#ffcc80"
 const linkStyle       = { color: "inherit", textDecoration: "none" };
 const linkActiveStyle = { color: "#ffcc80", textDecoration: "none", fontWeight: "bold" };
 
@@ -61,12 +59,11 @@ export const Header = () => {
       >
         <Toolbar sx={{ px: { xs: 2, md: 4 }, minHeight: 64 }}>
 
-          {/* ── IZQUIERDA: Logo ─────────────────────────────── */}
+          {/* ── IZQUIERDA: Logo  */}
           <Box
             onClick={() => navigate("/")}
             sx={{ display: "flex", alignItems: "center", gap: 1, cursor: "pointer", flexShrink: 0 }}
           >
-            {/* 💡 Cambia el emoji "🥐" por una <img> si tienes un logo real */}
             <Typography sx={{ fontSize: "1.6rem", lineHeight: 1 }}>🥐</Typography>
             <Typography
               variant="h6"
@@ -76,7 +73,7 @@ export const Header = () => {
             </Typography>
           </Box>
 
-          {/* ── CENTRO: Links (solo en desktop) ─────────────── */}
+          {/* ── CENTRO: Links (solo en desktop) */}
           {!isMobile && (
             <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center", gap: 0.5 }}>
               {navLinks.map(({ path, label, icon }) => (
@@ -106,7 +103,7 @@ export const Header = () => {
           {/* Espaciador flexible para empujar íconos a la derecha en mobile */}
           {isMobile && <Box sx={{ flexGrow: 1 }} />}
 
-          {/* ── DERECHA: Íconos de acción ────────────────────── */}
+          {/* ── DERECHA: Íconos de acción  */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
 
             {/* Ícono Carrito — badge muestra cantidad de productos */}
