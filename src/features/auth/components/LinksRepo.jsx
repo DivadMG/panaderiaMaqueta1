@@ -55,6 +55,8 @@ const LinksRepo = () => {
               size="large"
               startIcon={<GitHubIcon />}
               href="https://github.com/DivadMG/panaderiaMaqueta1"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 backgroundColor: "#24292e",
                 "&:hover": { backgroundColor: "#444d56" },
@@ -73,7 +75,9 @@ const LinksRepo = () => {
               variant="contained"
               size="large"
               startIcon={<RocketLaunchIcon />}
-              href="panaderia-maqueta1-git-main-davids-projects-9f0fa5fc.vercel.app"
+              href="https://panaderia-maqueta1-git-main-davids-projects-9f0fa5fc.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 backgroundColor: "#000",
                 "&:hover": { backgroundColor: "#333" },
